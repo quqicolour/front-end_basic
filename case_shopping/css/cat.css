@@ -1,0 +1,39 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.allbodybox1{
+	width: 800px;
+	height: auto;
+	position: absolute;
+	border:1px solid #00ff00;
+	display: inline-block;
+}
+.boxbody1{
+	width: 49%;
+	height: 40%;
+	position: relative;
+	left: 0%;
+	right:auto;
+	border:1px solid #ffff00;
+	display: inline-block;
+	
+}
+.boxin1{
+	width: 80%;
+	height: 100%;
+	border:1px solid #0000ff;
+	display: inline-block;
+}
+.boxbody2{
+	width:49%;
+	height: 40%;
+	position: relative;
+	left:50% ;
+	right: auto;
+	top: 0%;
+	bottom: auto;
+	border:1px solid #ccc;
+	display: inline-block;
+	
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>商品管理系统</title>
+		<meta name="renderer" content="webkit">
+		<style>
+		#chart{
+			height: 300px;
+				
+		}
+		</style>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/datetimepicker/bootstrap-datetimepicker.min.css" media="screen"/>
+	</head>
+	<body>
+		<!-- 头部 -->
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<!-- 头部文本开始 -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"><b>商品管理业务</b></a>
+				</div>
+				<!-- 头部文本结束 -->
+		
+				<!-- 菜单开始 -->
+				<div>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">首頁</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<span>输入管理</span>
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">人力管理</a></li>
+								<li><a href="#">商品表</a></li>
+								<li><a href="#">顾客月报生成</a></li>
+								<li><a href="#">商品月报生成</a></li>
+								<li><a href="#">库存情况</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<span>钱库管理</span>
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">用户登录</a></li>
+								<li><a href="#">付钱请求</a></li>
+								<li><a href="#">收入登录</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="glyphicon glyphicon-user"></i>
+								<span>oylm</span>
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">退出</a></li>
+							</ul>
+						</li>
+						<li></li>
+					</ul>
+				</div>
+				<!-- 菜单结束 -->
+			</div>
+		</div>
+		<!-- Top End -->
+		<!-- body_begin -->
+		<!-- <div class="container" -->
+		<div class="container" style="width: 80%;">
+						<!-- <div class="col-md-12" style="width: 80%;"> -->
+							<div class="panel panel-default">
+							  <div class="panel-heading">
+							    <div class="row">
+									<div class="col-md-6" align="left">
+										<font style="font-size: 14px;line-height: 29px;">顾客的月报生成</font>
+									</div>
+								</div>
+							  </div>
+							  <div class="panel-body">
+								<table class="table table-bordered">
+							      <tbody>
+									<!-- 绘制图表 -->
+									<div id="chart">
+										
+									</div>
+							      </tbody>
+							    </table>
+							</div>
+						</div>
+					</div>
+		<!-- body_end -->
+		<!-- 尾部开始 -->
+		<div class="text-center text-muted" style="height: 40px; width:100%;bottom:0;position:fixed;line-height: 40px; background-color:#eee">
+		    <i class="glyphicon glyphicon-copyright-mark"></i>ouyang作成
+		</div>
+		<!-- 尾部结束-->
+		
+		<!-- js_begin -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/datetimepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="js/datetimepicker/locales/bootstrap-datetimepicker.ja.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./js/echarts.min.js"></script>
+		<script type="text/javascript">
+		//init datetimepicker
+		$(".form_date").datetimepicker({
+			language:  'ja',//i18N
+			autoclose: true,//autoclose
+			todayHighlight: true,//todayHighlight
+			todayBtn: true,//todayBtn
+			minView: "month",//minView
+			format : "yyyy-mm-dd",//format
+			pickerPosition: "bottom-left"//pickerPosition:bottom-left
+		});
+		</script>
+		<script>
+		const instance=echarts.init(chart);
+		const option={
+			tooltip:{},
+			legend:{
+				data:['销售额合计']
+			},
+			xAxis:{
+				type:'category',
+				data:['10001','10002','10003','10004','10005','10006','10007','10008','10009','10010']},
+			yAxis:{
+				type:'value'
+			},
+			series:[{
+				name:'销售额合计',
+				data:[1,32,12,23,32,34,12,32,22,33],
+				type:'bar',
+				barWidth:'24px',
+				// color:'#ff0000'
+				itemStyle:{
+					color:'#ff0000'
+				}
+			}]
+		};
+		var option1={
+			title:{
+				
+			},
+			tooltip:{},
+			legend:{
+				data:['销售额合计']
+			}
+		}
+		instance.setOption(option)	
+		instance.setOption(option1)
+		</script>
+		<!-- js_end -->
+	</body>
+</html>
